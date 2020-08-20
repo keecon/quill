@@ -67,26 +67,26 @@ class Selection {
   }
 
   handleComposition() {
-    this.root.addEventListener('compositionstart', () => {
-      this.composing = true;
-      this.scroll.batchStart();
-    });
-    this.root.addEventListener('compositionend', () => {
-      this.scroll.batchEnd();
-      this.composing = false;
-      if (this.cursor.parent) {
-        const range = this.cursor.restore();
-        if (!range) return;
-        setTimeout(() => {
-          this.setNativeRange(
-            range.startNode,
-            range.startOffset,
-            range.endNode,
-            range.endOffset,
-          );
-        }, 1);
-      }
-    });
+    // this.root.addEventListener('compositionstart', () => {
+    //   this.composing = true;
+    //   this.scroll.batchStart();
+    // });
+    // this.root.addEventListener('compositionend', () => {
+    //   this.scroll.batchEnd();
+    //   this.composing = false;
+    //   if (this.cursor.parent) {
+    //     const range = this.cursor.restore();
+    //     if (!range) return;
+    //     setTimeout(() => {
+    //       this.setNativeRange(
+    //         range.startNode,
+    //         range.startOffset,
+    //         range.endNode,
+    //         range.endOffset,
+    //       );
+    //     }, 1);
+    //   }
+    // });
   }
 
   handleDragging() {
